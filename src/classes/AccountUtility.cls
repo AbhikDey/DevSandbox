@@ -4,7 +4,7 @@ public static void UpdateAccountName(Case[] cases){
   list<Account> lstAccount = new list<Account>();
     set<string> setofaccIds = new set<string>();
         Map<string, Id> MapIds = new Map<string, Id>();
-  
+        Map<string, Id> MapIdstest = new Map<string, Id>();
    
         for(Case cs : cases) {
        
