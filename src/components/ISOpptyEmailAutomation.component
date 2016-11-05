@@ -1,0 +1,48 @@
+<apex:component controller="ISOpptyEmailController" access="global">
+
+    <apex:attribute name="opptyIdVal" type="String" description="Id of the Opportunity" assignTo="{!opptyId}" />
+
+       <apex:dataTable value="{!tableRows}" var="t" border="2" cellspacing="1" styleClass="tableClass">
+        <apex:column >
+            <apex:facet name="header">Opportunity Name</apex:facet>
+           <apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+t.opt.Id}" target="_blank">{!t.opt.Name}</apex:outputlink>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">SJM ID</apex:facet>
+            <apex:outputText value="{!t.equ.Account_Name__r.SJM_ID__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Account Name</apex:facet>
+            <apex:outputText value="{!t.equ.Account_Name__r.Name}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Serial Number</apex:facet>
+            <apex:outputText value="{!t.equ.Serial_Lot_Number__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Material Description</apex:facet>
+            <apex:outputText value="{!t.equ.Installed_Product_Name__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Sales Type</apex:facet>
+            <apex:outputText value="{!t.equ.Sale_Type__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Product</apex:facet>
+            <apex:outputText value="{!t.equ.Oppty_Product_Model__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Warranty End Date</apex:facet>
+            <apex:outputText value="{!month(t.equ.Warranty_End__c)}/{!day(t.equ.Warranty_End__c)}/{!year(t.equ.Warranty_End__c)}"/>
+        </apex:column>
+                <apex:column >
+            <apex:facet name="header">List Price</apex:facet>
+            <apex:outputText value="{!t.ol.TotalPrice}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Close Date</apex:facet>
+            <apex:outputText value="{!month(t.opt.CloseDate)}/{!day(t.opt.CloseDate)}/{!year(t.opt.CloseDate)}" />
+        </apex:column>
+    </apex:dataTable>
+
+</apex:component>
