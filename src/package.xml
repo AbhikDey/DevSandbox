@@ -4,6 +4,13 @@
         <members>*</members>
         <name>ApexComponent</name>
     </types>
-  
+  <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
     <version>37.0</version>
 </Package>
