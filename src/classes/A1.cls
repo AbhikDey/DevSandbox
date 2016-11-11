@@ -1,10 +1,9 @@
 public class A1 {
     
     public A1(){
-        public string testAlpha;
         List<User> q1 = 
             [SELECT Id,Username,LastName,FirstName,Name,Email,UserRoleId,CreatedDate,LastModifiedDate,UserPermissionsSFContentUser FROM User WHERE (Id = '005j000000BiiOGAAZ')];
-        System.debug('Q1: ' + q1.size());
+        System.debug('Q23232: ' + q1.size());
         
         List<User> q2 = 
             [SELECT Id,Username,LastName,FirstName,Name,Email,UserRoleId,CreatedDate,LastModifiedDate,UserPermissionsSFContentUser FROM User WHERE (Id = '005j000000BiiOGAAZ')];
